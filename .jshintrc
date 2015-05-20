@@ -1,7 +1,0 @@
-{
-  "node": true,
-
-  "quotmark": true,
-  "undef": true,
-  "trailing": true
-}
