@@ -1,7 +1,7 @@
 {
   "name": "react-mobiscroll",
   "description": "A simple wrapper of Mobiscroll for ReactJS.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Francisco Dias <francisco@baiodias.com>",
   "bugs": {
     "url": "https://github.com/xicombd/react-mobiscroll/issues"
@@ -108,7 +108,7 @@
     "touch"
   ],
   "license": "MIT",
-  "main": "react-mobiscroll.js",
+  "main": "lib/Mobiscroll.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/sinfo/react-mobiscroll"
