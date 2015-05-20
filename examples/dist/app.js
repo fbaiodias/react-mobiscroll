@@ -9,10 +9,6 @@ These errors can be ignored until the bug has been fixed.
 var React = require('react');
 var Mobiscroll = require('react-mobiscroll');
 
-function logChange(value) {
-	console.log('Select value changed: ' + value);
-}
-
 var SelectField = React.createClass({
 	displayName: 'SelectField',
 
