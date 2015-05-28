@@ -114,7 +114,7 @@
   "main": "lib/Mobiscroll.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sinfo/react-mobiscroll"
+    "url": "git://github.com/xicombd/react-mobiscroll"
   },
   "scripts": {
     "build": "gulp clean && NODE_ENV=production gulp build",
