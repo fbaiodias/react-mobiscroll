@@ -1,5 +1,6 @@
 /* global document */
 var React = require('react');
+var omit = require('lodash.omit');
 var $ = require('jQuery');
 require('mobiscroll');
 require('mobiscroll-frame');
@@ -38,7 +39,11 @@ var Mobiscroll = React.createClass({
   },
 
   render: function () {
-    return React.createElement(this.props.elType, null, this.props.children);
+    var other = omit(this.props, 'preset');
+    other = omit(other, 'elType');
+    other = omit(other, 'options');
+
+    return React.createElement(this.props.elType, other);
   }
 });
 

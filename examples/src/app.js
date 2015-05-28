@@ -7,19 +7,24 @@ var React = require('react');
 var Mobiscroll = require('react-mobiscroll');
 
 var SelectField = React.createClass({
+	handleChange: function (value) {
+		console.log('changed to', value)
+	},
 	render: function() {
 		var ops = {
 			display: 'inline',
 			showInput: false,
 			data: [
-				{ text: 'Paris', value: '1', group: 'Europe' },
-				{ text: 'New York',  value: '2',  group: 'America' }
-			]
+				{ text: 'Paris', value: 'paris', group: 'Europe' },
+				{ text: 'Lisbon',  value: 'lisbon',  group: 'Europe' },
+				{ text: 'New York',  value: 'new-york',  group: 'America' }
+			],
+			onChange: this.handleChange
     }
 		return (
 			<div>
 				<label>Select</label>
-				<Mobiscroll preset="select" options={ops}/>
+				<Mobiscroll defaultValue="lisbon" preset="select" options={ops}/>
 			</div>
 		);
 	}
@@ -150,6 +155,7 @@ React.render(
 		<SelectField />
 		<TimeField />
 		<DateField />
+		<ImageField />
 		<ScrollerField />
 		<TreeListField />
 	</div>,

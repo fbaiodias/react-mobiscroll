@@ -12,11 +12,15 @@ var Mobiscroll = require('react-mobiscroll');
 var SelectField = React.createClass({
 	displayName: 'SelectField',
 
+	handleChange: function handleChange(value) {
+		console.log('changed to', value);
+	},
 	render: function render() {
 		var ops = {
 			display: 'inline',
 			showInput: false,
-			data: [{ text: 'Paris', value: '1', group: 'Europe' }, { text: 'New York', value: '2', group: 'America' }]
+			data: [{ text: 'Paris', value: 'paris', group: 'Europe' }, { text: 'Lisbon', value: 'lisbon', group: 'Europe' }, { text: 'New York', value: 'new-york', group: 'America' }],
+			onChange: this.handleChange
 		};
 		return React.createElement(
 			'div',
@@ -26,7 +30,7 @@ var SelectField = React.createClass({
 				null,
 				'Select'
 			),
-			React.createElement(Mobiscroll, { preset: 'select', options: ops })
+			React.createElement(Mobiscroll, { defaultValue: 'lisbon', preset: 'select', options: ops })
 		);
 	}
 });
@@ -208,6 +212,7 @@ React.render(React.createElement(
 	React.createElement(SelectField, null),
 	React.createElement(TimeField, null),
 	React.createElement(DateField, null),
+	React.createElement(ImageField, null),
 	React.createElement(ScrollerField, null),
 	React.createElement(TreeListField, null)
 ), document.getElementById('example'));

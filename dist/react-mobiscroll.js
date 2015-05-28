@@ -3,6 +3,7 @@
 'use strict';
 
 var React = require('react');
+var omit = require('lodash.omit');
 var $ = require('jQuery');
 require('mobiscroll');
 require('mobiscroll-frame');
@@ -38,13 +39,17 @@ var Mobiscroll = React.createClass({
   },
 
   render: function render() {
-    return React.createElement(this.props.elType, null, this.props.children);
+    var other = omit(this.props, 'preset');
+    other = omit(other, 'elType');
+    other = omit(other, 'options');
+
+    return React.createElement(this.props.elType, other);
   }
 });
 
 module.exports = Mobiscroll;
 
-},{"jQuery":2,"mobiscroll":3,"mobiscroll-datetime":4,"mobiscroll-datetimebase":5,"mobiscroll-frame":6,"mobiscroll-image":7,"mobiscroll-listbase":8,"mobiscroll-scroller":9,"mobiscroll-select":10,"mobiscroll-treelist":11,"mobiscroll-util":12,"react":undefined}],2:[function(require,module,exports){
+},{"jQuery":2,"lodash.omit":undefined,"mobiscroll":3,"mobiscroll-datetime":4,"mobiscroll-datetimebase":5,"mobiscroll-frame":6,"mobiscroll-image":7,"mobiscroll-listbase":8,"mobiscroll-scroller":9,"mobiscroll-select":10,"mobiscroll-treelist":11,"mobiscroll-util":12,"react":undefined}],2:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {

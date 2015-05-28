@@ -1,7 +1,7 @@
 {
   "name": "react-mobiscroll",
   "description": "A simple wrapper of Mobiscroll for ReactJS.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Francisco Dias <francisco@baiodias.com>",
   "bugs": {
     "url": "https://github.com/xicombd/react-mobiscroll/issues"
@@ -87,7 +87,8 @@
     }
   },
   "dependencies": {
-    "browserify-shim": "^3.8.2"
+    "browserify-shim": "^3.8.2",
+    "lodash.omit": "^3.1.0"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
