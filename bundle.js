@@ -6325,6 +6325,7 @@ require("/Users/xicombd/src/github.com/xicombd/react-mobiscroll/vendor/mobiscrol
 'use strict';
 
 var React = require('react');
+var omit = require('lodash.omit');
 var $ = require('jQuery');
 require('mobiscroll');
 require('mobiscroll-frame');
@@ -6360,10 +6361,14 @@ var Mobiscroll = React.createClass({
   },
 
   render: function render() {
-    return React.createElement(this.props.elType, null, this.props.children);
+    var other = omit(this.props, 'preset');
+    other = omit(other, 'elType');
+    other = omit(other, 'options');
+
+    return React.createElement(this.props.elType, other);
   }
 });
 
 module.exports = Mobiscroll;
 
-},{"jQuery":1,"mobiscroll":2,"mobiscroll-datetime":3,"mobiscroll-datetimebase":4,"mobiscroll-frame":5,"mobiscroll-image":6,"mobiscroll-listbase":7,"mobiscroll-scroller":8,"mobiscroll-select":9,"mobiscroll-treelist":10,"mobiscroll-util":11,"react":undefined}]},{},[]);
+},{"jQuery":1,"lodash.omit":undefined,"mobiscroll":2,"mobiscroll-datetime":3,"mobiscroll-datetimebase":4,"mobiscroll-frame":5,"mobiscroll-image":6,"mobiscroll-listbase":7,"mobiscroll-scroller":8,"mobiscroll-select":9,"mobiscroll-treelist":10,"mobiscroll-util":11,"react":undefined}]},{},[]);
